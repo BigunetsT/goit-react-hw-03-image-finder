@@ -7,9 +7,9 @@ const LoaderApp = () => (
     <Loader
       type="ThreeDots"
       color="#00BFFF"
-      height={150}
-      width={150}
-      timeout={3000}
+      height={80}
+      width={80}
+      timeout={5000}
     />
   </div>
 );

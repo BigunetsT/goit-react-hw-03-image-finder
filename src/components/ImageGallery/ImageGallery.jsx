@@ -2,10 +2,15 @@ import PropTypes from 'prop-types';
 import styles from './ImageGallery.module.scss';
 import ImageGalleryItem from '../ImageGalleryItem';
 
-const ImageGallery = ({ images }) => (
+const ImageGallery = ({ images, onClick }) => (
   <ul className={styles.imageGallery}>
     {images.map(({ id, webformatURL }) => (
-      <ImageGalleryItem key={id} webformatURL={webformatURL} />
+      <ImageGalleryItem
+        key={id}
+        id={id}
+        webformatURL={webformatURL}
+        onClick={onClick}
+      />
     ))}
   </ul>
 );
@@ -17,5 +22,6 @@ ImageGallery.propTypes = {
       id: PropTypes.number.isRequired,
     }),
   ).isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 export default ImageGallery;
